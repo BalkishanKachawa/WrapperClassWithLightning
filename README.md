@@ -2,7 +2,7 @@
 
 This WrapperClass demo contains following files :
 
-1)WrapperClassController.apxc
+1)WClassController.apxc
 2)WrapperClass.apxc
 3)WrapperClassDemo.app
 4)WrapperClassComponent.cmp
