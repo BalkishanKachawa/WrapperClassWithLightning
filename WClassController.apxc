@@ -1,0 +1,22 @@
+public class WClassController{
+    
+    @AuraEnabled
+    public static List<WrapperClass> getAccounts() {
+        List<WrapperClass> wcList = new List<WrapperClass>();
+        List<Account> accList = [SELECT Name,Active__c, (SELECT Name FROM contacts) FROM Account];
+        
+        if(accList.size() > 0){
+            for(Account acct : accList){
+                if(acct.contacts.size() > 0){
+                    WrapperClass wc = new WrapperClass();
+                    wc.count = acct.contacts.size();
+                    wc.acc = acct;
+                    wcList.add(wc);
+                }
+            }
+        }
+        
+        return wcList;
+    }
+    
+}
