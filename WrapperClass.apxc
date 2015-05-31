@@ -1,0 +1,8 @@
+public class WrapperClass{
+    @AuraEnabled
+    public Integer count;
+    
+    @AuraEnabled
+    public Account acc;
+    
+}
