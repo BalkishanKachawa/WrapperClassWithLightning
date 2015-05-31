@@ -1,0 +1,27 @@
+<aura:component controller="bklightning.WClassController">
+	<aura:attribute name="accounts" type="bklightning.WrapperClass[]"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>
+        <table class="table table-bordered">
+            <thead>
+            	<tr>
+                	<th><b>Name</b></th>
+                    <th><b>Contact</b></th>
+                    <th><b>Active</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.accounts}" var="account">
+                    <tr>
+                        <td>{!account.acc.Name}</td>
+                        <td>{!account.count}</td>
+                        <td>{!account.acc.bklightning__Active__c}</td>
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>
